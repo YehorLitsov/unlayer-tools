@@ -12,13 +12,13 @@
 
 let commonTemplate = _.template(`
    <a>
-    <% if (values.product_image === true) { %>
+    <% if (product_image === true) { %>
       <div>I am IMAGE</div>
     <% } %>
-    <% if (values.product_label === true) { %>
+    <% if (product_label === true) { %>
       <div>I am LABEL</div>
     <% } %>
-    <% if (values.product_price === true) { %>
+    <% if (product_price === true) { %>
       <div>I am PRICE</div>
     <% } %>
    </a>
@@ -34,10 +34,12 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        values.product_image = true;
-        values.product_label = true;
-        values.product_price = true;
-        return commonTemplate(values);
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true
+        }
+        return commonTemplate(localValues);
       }
     }),
     exporters: {
