@@ -20,7 +20,7 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return imageTemplate;
+        return imageTemplate();
       }
     }),
     exporters: {
