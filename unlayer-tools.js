@@ -1,3 +1,15 @@
+let imageTemplate = _.template(`
+  <div>I am IMAGE</div>
+`);
+
+let labelTemplate = _.template(`
+  <div>I am LABEL</div>
+`);
+
+let priceTemplate = _.template(`
+  <div>I am PRICE</div>
+`);
+
 unlayer.registerTool({
   name: "recommended_product",
   label: "Recommended product",
@@ -8,7 +20,7 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return "<div>I am a custom tool.111</div>";
+        return imageTemplate;
       }
     }),
     exporters: {
