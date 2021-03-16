@@ -1,13 +1,27 @@
-let imageTemplate = _.template(`
-  <div>I am IMAGE</div>
-`);
+// let imageTemplate = _.template(`
+//   <div>I am IMAGE</div>
+// `);
 
-let labelTemplate = _.template(`
-  <div>I am LABEL</div>
-`);
+// let labelTemplate = _.template(`
+//   <div>I am LABEL</div>
+// `);
 
-let priceTemplate = _.template(`
-  <div>I am PRICE</div>
+// let priceTemplate = _.template(`
+//   <div>I am PRICE</div>
+// `);
+
+let commonTemplate = _.template(`
+   <a>
+    <% if (values.product_image === true) { %>
+      <div>I am IMAGE</div>
+    <% } %>
+    <% if (values.product_label === true) { %>
+      <div>I am LABEL</div>
+    <% } %>
+    <% if (values.product_price === true) { %>
+      <div>I am PRICE</div>
+    <% } %>
+   </a>
 `);
 
 unlayer.registerTool({
@@ -20,7 +34,10 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return imageTemplate();
+        values.product_image = true;
+        values.product_label = true;
+        values.product_price = true;
+        return commonTemplate(values);
       }
     }),
     exporters: {
