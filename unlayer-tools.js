@@ -13,7 +13,7 @@ let priceTemplate = _.template(`
 let commonTemplate = _.template(`
     <style>
         .pf-recommended-product {
-            text-align: <%= text_align%>;
+            text-align: <%= textAlign%>;
         }
         .pf-recommended-product-link {
             text-decoration: none;
@@ -57,21 +57,15 @@ unlayer.registerTool({
     default: {
       title: null,
     },
-    // text: {
-    //   title: 'Text',
-    //   position: 1,
-    //   options: {
-    //     textColor: {
-    //       label: 'Color',
-    //       defaultValue: '#ff0000',
-    //       widget: 'color_picker', // built_in property editor
-    //     },
-    //   },
-    // },
     productConfigs: {
       title: 'Product Configurations',
       position: 1,
       options: {
+        productAlign: {
+          label: 'Product Align',
+          defaultValue: 'center',
+          widget: 'text',
+        },
         includeImage: {
           label: 'Include Image',
           defaultValue: true,
@@ -90,22 +84,10 @@ unlayer.registerTool({
     }),
     exporters: {
       web: function (values) {
-        const localValues = {
-          includeImage: true,
-          includeLabel: true,
-          includePrice: true,
-          text_align: 'center'
-        }
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       },
       email: function (values) {
-        const localValues = {
-          includeImage: true,
-          includeLabel: true,
-          includePrice: true,
-          text_align: 'center'
-        }
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       }
     },
     head: {
