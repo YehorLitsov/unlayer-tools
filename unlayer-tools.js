@@ -1,13 +1,13 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">I am IMAGE</div>
+  <div class="pf-recommended-product-img">{{product_image}}</div>
 `);
 
 let labelTemplate = _.template(`
-  <div>I am LABEL</div>
+  <div>{{product_label}}</div>
 `);
 
 let priceTemplate = _.template(`
-  <div>I am PRICE</div>
+  <div>{{product_price}}</div>
 `);
 
 let commonTemplate = _.template(`
@@ -68,10 +68,22 @@ unlayer.registerTool({
     }),
     exporters: {
       web: function (values) {
-        return "<div>I am a custom tool.</div>";
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true,
+          text_align: 'center'
+        }
+        return commonTemplate(localValues);
       },
       email: function (values) {
-        return "<div>I am a custom tool.</div>";
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true,
+          text_align: 'center'
+        }
+        return commonTemplate(localValues);
       }
     },
     head: {
