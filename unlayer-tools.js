@@ -12,9 +12,8 @@ let imageTemplate = _.template(`
 
 let commonTemplate = _.template(`
    <a class="">
-    <% if (product_image === true) { %>
+    <% if (product_image === true) { imageTemplate()%>
       <div>I am IMAGE</div>
-      <% imageTemplate() %>
     <% } %>
     <% if (product_label === true) { %>
       <div>I am LABEL</div>
