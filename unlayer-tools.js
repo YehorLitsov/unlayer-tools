@@ -42,17 +42,19 @@ let commonTemplate = _.template(`
         }
     </style>
     <div class="pf-recommended-product">
-      <a class="pf-recommended-product-link" target="_blank">
-        <% if (includeImage === true) { %>
-          <%= imageTemplate() %>
-        <% } %>
-        <% if (includeLabel === true) { %>
-          <%= labelTemplate() %>
-        <% } %>
-        <% if (includePrice === true) { %>
-          <%= priceTemplate() %>
-        <% } %>
-      </a>
+      <% for (let i = 0; i < productQuantity; i++) {%>
+        <a class="pf-recommended-product-link" target="_blank">
+          <% if (includeImage === true) { %>
+            <%= imageTemplate() %>
+          <% } %>
+          <% if (includeLabel === true) { %>
+            <%= labelTemplate() %>
+          <% } %>
+          <% if (includePrice === true) { %>
+            <%= priceTemplate() %>
+          <% } %>
+        </a>
+      <% } %>
     </div>
 `);
 
