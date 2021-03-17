@@ -11,17 +11,23 @@ let priceTemplate = _.template(`
 `);
 
 let commonTemplate = _.template(`
-   <a class="">
-    <% if (product_image === true) { %>
-      <%= imageTemplate() %>
-    <% } %>
-    <% if (product_label === true) { %>
-      <%= labelTemplate() %>
-    <% } %>
-    <% if (product_price === true) { %>
-      <%= priceTemplate() %>
-    <% } %>
-   </a>
+    <style>
+        .link-class {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <a class="link-class">
+      <% if (product_image === true) { %>
+        <%= imageTemplate() %>
+      <% } %>
+      <% if (product_label === true) { %>
+        <%= labelTemplate() %>
+      <% } %>
+      <% if (product_price === true) { %>
+        <%= priceTemplate() %>
+      <% } %>
+    </a>
 `);
 
 unlayer.registerTool({
