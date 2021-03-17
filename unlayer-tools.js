@@ -1,13 +1,13 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{include_image}}</div>
+  <div class="pf-recommended-product-img">{{includeImage}}</div>
 `);
 
 let labelTemplate = _.template(`
-  <div>{{include_label}}</div>
+  <div>{{includeLabel}}</div>
 `);
 
 let priceTemplate = _.template(`
-  <div>{{include_price}}</div>
+  <div>{{includePrice}}</div>
 `);
 
 let commonTemplate = _.template(`
@@ -35,13 +35,13 @@ let commonTemplate = _.template(`
     </style>
     <div class="pf-recommended-product">
       <a class="pf-recommended-product-link">
-        <% if (include_image === true) { %>
+        <% if (includeImage === true) { %>
           <%= imageTemplate() %>
         <% } %>
-        <% if (include_label === true) { %>
+        <% if (includeLabel === true) { %>
           <%= labelTemplate() %>
         <% } %>
-        <% if (include_price === true) { %>
+        <% if (includePrice === true) { %>
           <%= priceTemplate() %>
         <% } %>
       </a>
@@ -85,30 +85,24 @@ unlayer.registerTool({
     Viewer: unlayer.createViewer({
       render(values) {
         console.log('>>> values', values);
-        const localValues = {
-          include_image: true,
-          include_label: true,
-          include_price: true,
-          text_align: 'center'
-        }
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       }
     }),
     exporters: {
       web: function (values) {
         const localValues = {
-          include_image: true,
-          include_label: true,
-          include_price: true,
+          includeImage: true,
+          includeLabel: true,
+          includePrice: true,
           text_align: 'center'
         }
         return commonTemplate(localValues);
       },
       email: function (values) {
         const localValues = {
-          include_image: true,
-          include_label: true,
-          include_price: true,
+          includeImage: true,
+          includeLabel: true,
+          includePrice: true,
           text_align: 'center'
         }
         return commonTemplate(localValues);
