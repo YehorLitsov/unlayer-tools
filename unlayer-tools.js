@@ -12,9 +12,15 @@ let priceTemplate = _.template(`
 
 let commonTemplate = _.template(`
     <style>
+        .pf-recommended-product {
+            text-align: center;
+        }
         .pf-recommended-product-link {
             text-decoration: none;
             color: black;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .pf-recommended-product-img {
             height: 100px;
@@ -26,17 +32,19 @@ let commonTemplate = _.template(`
             align-items: center;
         }
     </style>
-    <a class="pf-recommended-product-link">
-      <% if (product_image === true) { %>
-        <%= imageTemplate() %>
-      <% } %>
-      <% if (product_label === true) { %>
-        <%= labelTemplate() %>
-      <% } %>
-      <% if (product_price === true) { %>
-        <%= priceTemplate() %>
-      <% } %>
-    </a>
+    <div class="pf-recommended-product">
+      <a class="pf-recommended-product-link">
+        <% if (product_image === true) { %>
+          <%= imageTemplate() %>
+        <% } %>
+        <% if (product_label === true) { %>
+          <%= labelTemplate() %>
+        <% } %>
+        <% if (product_price === true) { %>
+          <%= priceTemplate() %>
+        <% } %>
+      </a>
+    </div>
 `);
 
 unlayer.registerTool({
