@@ -13,7 +13,7 @@ let priceTemplate = _.template(`
 let commonTemplate = _.template(`
     <style>
         .pf-recommended-product {
-            text-align: center;
+            /*text-align: center;*/
         }
         .pf-recommended-product-link {
             text-decoration: none;
@@ -32,7 +32,7 @@ let commonTemplate = _.template(`
             align-items: center;
         }
     </style>
-    <div class="pf-recommended-product">
+    <div class="pf-recommended-product" style="text-align: <%= text_align%>">
       <a class="pf-recommended-product-link">
         <% if (product_image === true) { %>
           <%= imageTemplate() %>
@@ -60,7 +60,8 @@ unlayer.registerTool({
         const localValues = {
           product_image: true,
           product_label: true,
-          product_price: true
+          product_price: true,
+          text_align: 'right'
         }
         return commonTemplate(localValues);
       }
