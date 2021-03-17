@@ -13,7 +13,7 @@ let priceTemplate = _.template(`
 let commonTemplate = _.template(`
     <style>
         .pf-recommended-product {
-            text-align: <%= textAlign%>;
+            text-align: <%= productAlign%>;
         }
         .pf-recommended-product-link {
             text-decoration: none;
