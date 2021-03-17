@@ -1,37 +1,37 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{includeImage}}</div>
+  <div class="pf-recommended-product-img">{{image}}</div>
 `);
 
 let labelTemplate = _.template(`
-  <div>{{includeLabel}}</div>
+  <div>{{label}}</div>
 `);
 
 let priceTemplate = _.template(`
-  <div>{{includePrice}}</div>
+  <div>{{price}}</div>
 `);
 
 let commonTemplate = _.template(`
     <style>
-        .pf-recommended-product {
-            text-align: <%= productAlign%>;
-        }
-        .pf-recommended-product-link {
-            text-decoration: none;
-            color: black;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            width: 140px;
-        }
-        .pf-recommended-product-img {
-            height: 140px;
-            width: 140px;
-            background: lightgray;
-            border: 2px dashed gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        /*.pf-recommended-product {*/
+        /*    text-align: <%= productAlign%>;*/
+        /*}*/
+        /*.pf-recommended-product-link {*/
+        /*    text-decoration: none;*/
+        /*    color: black;*/
+        /*    display: inline-flex;*/
+        /*    flex-direction: column;*/
+        /*    align-items: center;*/
+        /*    width: 140px;*/
+        /*}*/
+        /*.pf-recommended-product-img {*/
+        /*    height: 140px;*/
+        /*    width: 140px;*/
+        /*    background: lightgray;*/
+        /*    border: 2px dashed gray;*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*}*/
     </style>
     <div class="pf-recommended-product">
       <a class="pf-recommended-product-link">
@@ -101,7 +101,29 @@ unlayer.registerTool({
       }
     },
     head: {
-      css: function (values) {},
+      css: function (values) {
+        return `
+        .pf-recommended-product {
+            text-align: <%= productAlign%>;
+        }
+        .pf-recommended-product-link {
+            text-decoration: none;
+            color: black;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+        }
+        .pf-recommended-product-img {
+            height: 140px;
+            width: 140px;
+            background: lightgray;
+            border: 2px dashed gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }`
+      },
       js: function (values) {}
     }
   }
