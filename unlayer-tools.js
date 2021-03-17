@@ -57,23 +57,28 @@ unlayer.registerTool({
     default: {
       title: null,
     },
-    text: {
-      title: 'Text',
+    // text: {
+    //   title: 'Text',
+    //   position: 1,
+    //   options: {
+    //     textColor: {
+    //       label: 'Color',
+    //       defaultValue: '#ff0000',
+    //       widget: 'color_picker', // built_in property editor
+    //     },
+    //   },
+    // },
+    productConfigs: {
+      title: 'Product Configurations',
       position: 1,
       options: {
-        textColor: {
-          label: 'Color',
-          defaultValue: '#ff0000',
-          widget: 'color_picker', // built_in property editor
-        },
-      },
-    },
-    // include_image: {
-    //   label: 'Include Image',
-    //   position: 1,
-    //   defaultValue: true,
-    //   widget: 'toggle',
-    // }
+        includeImage: {
+          label: 'Include Image',
+          defaultValue: true,
+          widget: 'toggle',
+        }
+      }
+    }
   },
   values: {},
   renderer: {
