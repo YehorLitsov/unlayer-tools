@@ -11,27 +11,29 @@ let priceTemplate = _.template(`
 `);
 
 let commonTemplate = _.template(`
+    <!--Styles placed here to be dynamically changed in ui, if it will be placed in head.css they will be changed 
+    once on init-->
     <style>
-        /*.pf-recommended-product {*/
-        /*    text-align: <%= productAlign%>;*/
-        /*}*/
-        /*.pf-recommended-product-link {*/
-        /*    text-decoration: none;*/
-        /*    color: black;*/
-        /*    display: inline-flex;*/
-        /*    flex-direction: column;*/
-        /*    align-items: center;*/
-        /*    width: 140px;*/
-        /*}*/
-        /*.pf-recommended-product-img {*/
-        /*    height: 140px;*/
-        /*    width: 140px;*/
-        /*    background: lightgray;*/
-        /*    border: 2px dashed gray;*/
-        /*    display: flex;*/
-        /*    justify-content: center;*/
-        /*    align-items: center;*/
-        /*}*/
+        .pf-recommended-product {
+            text-align: <%= productAlign%>;
+        }
+        .pf-recommended-product-link {
+            text-decoration: none;
+            color: black;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+        }
+        .pf-recommended-product-img {
+            height: 140px;
+            width: 140px;
+            background: lightgray;
+            border: 2px dashed gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
     <div class="pf-recommended-product">
       <a class="pf-recommended-product-link">
@@ -101,29 +103,7 @@ unlayer.registerTool({
       }
     },
     head: {
-      css: function (values) {
-        return `
-        .pf-recommended-product {
-            text-align: <%= productAlign%>;
-        }
-        .pf-recommended-product-link {
-            text-decoration: none;
-            color: black;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            width: 140px;
-        }
-        .pf-recommended-product-img {
-            height: 140px;
-            width: 140px;
-            background: lightgray;
-            border: 2px dashed gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }`
-      },
+      css: function (values) {},
       js: function (values) {}
     }
   }
