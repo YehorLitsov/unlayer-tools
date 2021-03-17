@@ -54,16 +54,32 @@ unlayer.registerTool({
   icon: "fa-shopping-basket",
   supportedDisplayModes: ["web", "email"],
   options: {
-    include_image: {
-      label: 'Include Image',
-      defaultValue: true,
-      widget: 'toggle',
-    }
+    default: {
+      title: null,
+    },
+    text: {
+      title: 'Text',
+      position: 1,
+      options: {
+        textColor: {
+          label: 'Color',
+          defaultValue: '#ff0000',
+          widget: 'color_picker', // built_in property editor
+        },
+      },
+    },
+    // include_image: {
+    //   label: 'Include Image',
+    //   position: 1,
+    //   defaultValue: true,
+    //   widget: 'toggle',
+    // }
   },
   values: {},
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
+        consol.log('>>> values', values);
         const localValues = {
           include_image: true,
           include_label: true,
