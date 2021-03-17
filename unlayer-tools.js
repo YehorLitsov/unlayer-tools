@@ -61,7 +61,7 @@ unlayer.registerTool({
           product_image: true,
           product_label: true,
           product_price: true,
-          text_align: 'right'
+          text_align: 'center'
         }
         return commonTemplate(localValues);
       }
