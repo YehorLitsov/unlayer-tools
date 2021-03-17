@@ -70,6 +70,16 @@ unlayer.registerTool({
           label: 'Include Image',
           defaultValue: true,
           widget: 'toggle',
+        },
+        includeLabel: {
+          label: 'Include Image',
+          defaultValue: true,
+          widget: 'toggle',
+        },
+        includePrice: {
+          label: 'Include Image',
+          defaultValue: true,
+          widget: 'toggle',
         }
       }
     }
