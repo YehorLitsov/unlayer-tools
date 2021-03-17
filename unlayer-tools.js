@@ -90,36 +90,14 @@ unlayer.registerTool({
     }),
     exporters: {
       web: function (values) {
-        return commonTemplate(localValues);
+        return "<div>I am a custom tool.</div>";
       },
       email: function (values) {
-        return commonTemplate(localValues);
+        return "<div>I am a custom tool.</div>";
       }
     },
     head: {
-      css: function (values) {
-        // return `
-        // .pf-recommended-product {
-        //     text-align: <%= text_align%>;
-        // }
-        // .pf-recommended-product-link {
-        //     text-decoration: none;
-        //     color: black;
-        //     display: inline-flex;
-        //     flex-direction: column;
-        //     align-items: center;
-        // }
-        // .pf-recommended-product-img {
-        //     height: 100px;
-        //     width: 100px;
-        //     background: lightgray;
-        //     border: 2px dashed gray;
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        // }
-        // `
-      },
+      css: function (values) {},
       js: function (values) {}
     }
   }
