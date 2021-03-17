@@ -64,7 +64,7 @@ unlayer.registerTool({
         productAlign: {
           label: 'Product Align',
           defaultValue: 'center',
-          widget: 'text',
+          widget: 'dropdown',
         },
         includeImage: {
           label: 'Include Image',
