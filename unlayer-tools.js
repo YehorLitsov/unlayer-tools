@@ -47,53 +47,43 @@ let commonTemplate = _.template(`
     </div>
 `);
 
-const localValues = {
-  product_image: true,
-  product_label: true,
-  product_price: true,
-  text_align: 'center'
-}
-
 unlayer.registerTool({
   name: "recommended_product",
   label: "Recommended product",
   icon: "fa-shopping-basket",
   supportedDisplayModes: ["web", "email"],
-  options: {
-    align_products: {
-      title: 'Align Products',
-      defaultValue: 'center',
-      widget: 'dropdown'
-    },
-    include_image: {
-      title: 'Include Image',
-      defaultValue: true,
-      widget: 'toggle'
-    },
-    include_label: {
-      title: 'Include Label',
-      defaultValue: true,
-      widget: 'toggle'
-    },
-    include_price: {
-      title: 'Include Price',
-      defaultValue: true,
-      widget: 'toggle'
-    }
-  },
+  options: {},
   values: {},
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true,
+          text_align: 'center'
+        }
         return commonTemplate(localValues);
       }
     }),
     exporters: {
       web: function (values) {
-        return "<div>I am a custom tool.</div>";
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true,
+          text_align: 'center'
+        }
+        return commonTemplate(localValues);
       },
       email: function (values) {
-        return "<div>I am a custom tool.</div>";
+        const localValues = {
+          product_image: true,
+          product_label: true,
+          product_price: true,
+          text_align: 'center'
+        }
+        return commonTemplate(localValues);
       }
     },
     head: {
