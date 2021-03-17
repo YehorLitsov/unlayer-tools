@@ -1,6 +1,6 @@
-// let imageTemplate = _.template(`
-//   <div>I am IMAGE</div>
-// `);
+let imageTemplate = _.template(`
+  <div>I am IMAGE</div>
+`);
 
 // let labelTemplate = _.template(`
 //   <div>I am LABEL</div>
@@ -11,9 +11,10 @@
 // `);
 
 let commonTemplate = _.template(`
-   <a>
+   <a class="">
     <% if (product_image === true) { %>
       <div>I am IMAGE</div>
+      <% imageTemplate() %>
     <% } %>
     <% if (product_label === true) { %>
       <div>I am LABEL</div>
