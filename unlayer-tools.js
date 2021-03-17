@@ -2,25 +2,24 @@ let imageTemplate = _.template(`
   <div>I am IMAGE</div>
 `);
 
-// let labelTemplate = _.template(`
-//   <div>I am LABEL</div>
-// `);
+let labelTemplate = _.template(`
+  <div>I am LABEL</div>
+`);
 
-// let priceTemplate = _.template(`
-//   <div>I am PRICE</div>
-// `);
+let priceTemplate = _.template(`
+  <div>I am PRICE</div>
+`);
 
 let commonTemplate = _.template(`
    <a class="">
     <% if (product_image === true) { %>
       <%= imageTemplate() %>
-      <div>I am IMAGE</div>
     <% } %>
     <% if (product_label === true) { %>
-      <div>I am LABEL</div>
+      <%= labelTemplate() %>
     <% } %>
     <% if (product_price === true) { %>
-      <div>I am PRICE</div>
+      <%= priceTemplate() %>
     <% } %>
    </a>
 `);
