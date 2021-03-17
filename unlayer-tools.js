@@ -24,6 +24,7 @@ let commonTemplate = _.template(`
             flex-direction: column;
             align-items: center;
             width: 140px;
+            margin: 0 5px;
         }
         .pf-recommended-product-img {
             height: 140px;
