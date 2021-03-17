@@ -79,7 +79,7 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        consol.log('>>> values', values);
+        console.log('>>> values', values);
         const localValues = {
           include_image: true,
           include_label: true,
