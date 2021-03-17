@@ -1,5 +1,5 @@
 let imageTemplate = _.template(`
-  <div>I am IMAGE</div>
+  <div class="pf-recommended-product-img">I am IMAGE</div>
 `);
 
 let labelTemplate = _.template(`
@@ -12,12 +12,21 @@ let priceTemplate = _.template(`
 
 let commonTemplate = _.template(`
     <style>
-        .link-class {
+        .pf-recommended-product-link {
             text-decoration: none;
             color: black;
         }
+        .pf-recommended-product-img {
+            height: 100px;
+            width: 100px;
+            background: lightgray;
+            border: 2px dashed gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
-    <a class="link-class">
+    <a class="pf-recommended-product-link">
       <% if (product_image === true) { %>
         <%= imageTemplate() %>
       <% } %>
