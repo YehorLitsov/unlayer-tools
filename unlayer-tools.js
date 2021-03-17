@@ -98,27 +98,27 @@ unlayer.registerTool({
     },
     head: {
       css: function (values) {
-        return `
-        .pf-recommended-product {
-            text-align: <%= text_align%>;
-        }
-        .pf-recommended-product-link {
-            text-decoration: none;
-            color: black;
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .pf-recommended-product-img {
-            height: 100px;
-            width: 100px;
-            background: lightgray;
-            border: 2px dashed gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        `
+        // return `
+        // .pf-recommended-product {
+        //     text-align: <%= text_align%>;
+        // }
+        // .pf-recommended-product-link {
+        //     text-decoration: none;
+        //     color: black;
+        //     display: inline-flex;
+        //     flex-direction: column;
+        //     align-items: center;
+        // }
+        // .pf-recommended-product-img {
+        //     height: 100px;
+        //     width: 100px;
+        //     background: lightgray;
+        //     border: 2px dashed gray;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        // }
+        // `
       },
       js: function (values) {}
     }
