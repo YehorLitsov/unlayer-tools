@@ -13,14 +13,14 @@ let priceTemplate = _.template(`
 let commonTemplate = _.template(`
     <style>
         .pf-recommended-product {
-            /*text-align: center;*/
+            text-align: <%= text_align%>;
         }
         .pf-recommended-product-link {
             text-decoration: none;
             color: black;
             display: inline-flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
         .pf-recommended-product-img {
             height: 100px;
@@ -32,7 +32,7 @@ let commonTemplate = _.template(`
             align-items: center;
         }
     </style>
-    <div class="pf-recommended-product" style="text-align: <%= text_align%>">
+    <div class="pf-recommended-product">
       <a class="pf-recommended-product-link">
         <% if (product_image === true) { %>
           <%= imageTemplate() %>
