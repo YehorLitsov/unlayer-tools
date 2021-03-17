@@ -85,15 +85,15 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       }
     }),
     exporters: {
       web: function (values) {
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       },
       email: function (values) {
-        return commonTemplate(localValues);
+        return commonTemplate(values);
       }
     },
     head: {
