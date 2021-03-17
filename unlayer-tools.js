@@ -3,11 +3,11 @@ let imageTemplate = _.template(`
 `);
 
 let labelTemplate = _.template(`
-  <div>{{label}}</div>
+  <div class="pf-recommended-product-label">{{label}}</div>
 `);
 
 let priceTemplate = _.template(`
-  <div>{{price}}</div>
+  <div class="pf-recommended-product-price">{{price}}</div>
 `);
 
 let commonTemplate = _.template(`
@@ -34,9 +34,15 @@ let commonTemplate = _.template(`
             justify-content: center;
             align-items: center;
         }
+        .pf-recommended-product-label {
+            font-size: 16px;
+        }
+        .pf-recommended-product-price {
+            font-size: 12px;
+        }
     </style>
     <div class="pf-recommended-product">
-      <a class="pf-recommended-product-link">
+      <a class="pf-recommended-product-link" target="_blank">
         <% if (includeImage === true) { %>
           <%= imageTemplate() %>
         <% } %>
@@ -63,6 +69,11 @@ unlayer.registerTool({
       title: 'Product Configurations',
       position: 1,
       options: {
+        productQuantity: {
+          label: 'Products Quantity in Template',
+          defaultValue: 1,
+          widget: 'dropdown',
+        },
         productAlign: {
           label: 'Product Align',
           defaultValue: 'center',
@@ -74,12 +85,12 @@ unlayer.registerTool({
           widget: 'toggle',
         },
         includeLabel: {
-          label: 'Include Image',
+          label: 'Include Label',
           defaultValue: true,
           widget: 'toggle',
         },
         includePrice: {
-          label: 'Include Image',
+          label: 'Include Price',
           defaultValue: true,
           widget: 'toggle',
         }
