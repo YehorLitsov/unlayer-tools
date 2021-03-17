@@ -1,13 +1,13 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{product_image}}</div>
+  <div class="pf-recommended-product-img">{{include_image}}</div>
 `);
 
 let labelTemplate = _.template(`
-  <div>{{product_label}}</div>
+  <div>{{include_label}}</div>
 `);
 
 let priceTemplate = _.template(`
-  <div>{{product_price}}</div>
+  <div>{{include_price}}</div>
 `);
 
 let commonTemplate = _.template(`
@@ -21,10 +21,11 @@ let commonTemplate = _.template(`
             display: inline-flex;
             flex-direction: column;
             align-items: center;
+            width: 140px;
         }
         .pf-recommended-product-img {
-            height: 100px;
-            width: 100px;
+            height: 140px;
+            width: 140px;
             background: lightgray;
             border: 2px dashed gray;
             display: flex;
@@ -34,13 +35,13 @@ let commonTemplate = _.template(`
     </style>
     <div class="pf-recommended-product">
       <a class="pf-recommended-product-link">
-        <% if (product_image === true) { %>
+        <% if (include_image === true) { %>
           <%= imageTemplate() %>
         <% } %>
-        <% if (product_label === true) { %>
+        <% if (include_label === true) { %>
           <%= labelTemplate() %>
         <% } %>
-        <% if (product_price === true) { %>
+        <% if (include_price === true) { %>
           <%= priceTemplate() %>
         <% } %>
       </a>
@@ -52,15 +53,21 @@ unlayer.registerTool({
   label: "Recommended product",
   icon: "fa-shopping-basket",
   supportedDisplayModes: ["web", "email"],
-  options: {},
+  options: {
+    include_image: {
+      label: 'Include Image',
+      defaultValue: true,
+      widget: 'toggle',
+    }
+  },
   values: {},
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
         const localValues = {
-          product_image: true,
-          product_label: true,
-          product_price: true,
+          include_image: true,
+          include_label: true,
+          include_price: true,
           text_align: 'center'
         }
         return commonTemplate(localValues);
@@ -69,18 +76,18 @@ unlayer.registerTool({
     exporters: {
       web: function (values) {
         const localValues = {
-          product_image: true,
-          product_label: true,
-          product_price: true,
+          include_image: true,
+          include_label: true,
+          include_price: true,
           text_align: 'center'
         }
         return commonTemplate(localValues);
       },
       email: function (values) {
         const localValues = {
-          product_image: true,
-          product_label: true,
-          product_price: true,
+          include_image: true,
+          include_label: true,
+          include_price: true,
           text_align: 'center'
         }
         return commonTemplate(localValues);
