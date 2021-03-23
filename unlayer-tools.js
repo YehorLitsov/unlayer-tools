@@ -34,13 +34,13 @@ let commonTemplate = _.template(`
       <% for (let i = 0; i < productQuantity; i++) {%>
         <a class="pf-recommended-product-link" target="_blank">
           <% if (includeImage === true) { %>
-            <div class="pf-recommended-product-img">{{image_<%= i %>}}</div>
+            <div class="pf-recommended-product-img">{{image_<%= i+1 %>}}</div>
           <% } %>
           <% if (includeLabel === true) { %>
-            <div class="pf-recommended-product-label">{{label_<%= i %>}}</div>
+            <div class="pf-recommended-product-label">{{label_<%= i+1 %>}}</div>
           <% } %>
           <% if (includePrice === true) { %>
-            <div class="pf-recommended-product-price">{{price_<%= i %>}}</div>
+            <div class="pf-recommended-product-price">{{price_<%= i+1 %>}}</div>
           <% } %>
         </a>
       <% } %>
