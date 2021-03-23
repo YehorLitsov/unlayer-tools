@@ -1,13 +1,13 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{image}}</div>
+  <div class="pf-recommended-product-img">{{image}}<%= index %></div>
 `);
 
 let labelTemplate = _.template(`
-  <div class="pf-recommended-product-label">{{label}}</div>
+  <div class="pf-recommended-product-label">{{label}}<%= index %></div>
 `);
 
 let priceTemplate = _.template(`
-  <div class="pf-recommended-product-price">{{price}}</div>
+  <div class="pf-recommended-product-price">{{price}}<%= index %></div>
 `);
 
 let commonTemplate = _.template(`
@@ -46,13 +46,13 @@ let commonTemplate = _.template(`
       <% for (let i = 0; i < productQuantity; i++) {%>
         <a class="pf-recommended-product-link" target="_blank">
           <% if (includeImage === true) { %>
-            <%= imageTemplate() %>
+            <%= imageTemplate(i) %>
           <% } %>
           <% if (includeLabel === true) { %>
-            <%= labelTemplate() %>
+            <%= labelTemplate(i) %>
           <% } %>
           <% if (includePrice === true) { %>
-            <%= priceTemplate() %>
+            <%= priceTemplate(i) %>
           <% } %>
         </a>
       <% } %>
