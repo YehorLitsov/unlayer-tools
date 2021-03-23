@@ -34,13 +34,13 @@ let commonTemplate = _.template(`
       <% for (let i = 0; i < productQuantity; i++) {%>
         <a class="pf-recommended-product-link" target="_blank">
           <% if (includeImage === true) { %>
-            <div class="pf-recommended-product-img">{{image_<%= i+1 %>}}</div>
+            <div class="pf-recommended-product-img">{{products.<%= i+1 %>.image}}</div>
           <% } %>
           <% if (includeLabel === true) { %>
-            <div class="pf-recommended-product-label">{{label_<%= i+1 %>}}</div>
+            <div class="pf-recommended-product-label">{{products.<%= i+1 %>.label}}</div>
           <% } %>
           <% if (includePrice === true) { %>
-            <div class="pf-recommended-product-price">{{price_<%= i+1 %>}}</div>
+            <div class="pf-recommended-product-price">{{products.<%= i+1 %>.price}}</div>
           <% } %>
         </a>
       <% } %>
@@ -92,7 +92,6 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        console.log('>>> values', values);
         return commonTemplate(values);
       }
     }),
