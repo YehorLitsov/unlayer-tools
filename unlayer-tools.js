@@ -1,13 +1,13 @@
 let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{image}}<%= index %></div>
+  <div class="pf-recommended-product-img">{{image}}<%= i %></div>
 `);
 
 let labelTemplate = _.template(`
-  <div class="pf-recommended-product-label">{{label}}<%= index %></div>
+  <div class="pf-recommended-product-label">{{label}}<%= i %></div>
 `);
 
 let priceTemplate = _.template(`
-  <div class="pf-recommended-product-price">{{price}}<%= index %></div>
+  <div class="pf-recommended-product-price">{{price}}<%= i %></div>
 `);
 
 let commonTemplate = _.template(`
