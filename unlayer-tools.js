@@ -1,15 +1,3 @@
-let imageTemplate = _.template(`
-  <div class="pf-recommended-product-img">{{image}}<%= i %></div>
-`);
-
-let labelTemplate = _.template(`
-  <div class="pf-recommended-product-label">{{label}}<%= i %></div>
-`);
-
-let priceTemplate = _.template(`
-  <div class="pf-recommended-product-price">{{price}}<%= i %></div>
-`);
-
 let commonTemplate = _.template(`
     <!--Styles placed here to be dynamically changed in ui, if it will be placed in head.css they will be changed 
     once on init-->
@@ -46,13 +34,13 @@ let commonTemplate = _.template(`
       <% for (let i = 0; i < productQuantity; i++) {%>
         <a class="pf-recommended-product-link" target="_blank">
           <% if (includeImage === true) { %>
-            <div class="pf-recommended-product-img">{{image}}<%= i %></div>
+            <div class="pf-recommended-product-img">{{image_<%= i %>}}</div>
           <% } %>
           <% if (includeLabel === true) { %>
-            <div class="pf-recommended-product-label">{{label}}<%= i %></div>
+            <div class="pf-recommended-product-label">{{label_<%= i %>}}</div>
           <% } %>
           <% if (includePrice === true) { %>
-            <div class="pf-recommended-product-price">{{price}}<%= i %></div>
+            <div class="pf-recommended-product-price">{{price_<%= i %>}}</div>
           <% } %>
         </a>
       <% } %>
